@@ -22,7 +22,7 @@ const NavBar = styled.nav`
 `;
 const Logo = styled.h1`
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 `;
 const Nav = () => {
   return (

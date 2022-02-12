@@ -2,28 +2,46 @@ import React from "react";
 import styled from "styled-components";
 
 const SideLeftItem = styled.div`
-  text-align: center;
-  width: 50%;
+  margin-left: 16rem;
+  width: 40%;
   @media (min-width: 1024px) {
-    width: 40%;
+    width: 30%;
   }
+`;
+const ProductDesigner = styled.h2`
+  display: block;
+  text-align: start;
+`;
+const Description = styled.p`
+  display: block;
+  text-align: start;
+`;
+const ProductName = styled.h1`
+  display: block;
+  text-align: start;
+`;
+const ButtonDetail = styled.button`
+  padding: 1.2rem 1rem;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px sol;
 `;
 const ProductDetail = () => {
   return (
-    <>
-      <SideLeftItem>
-        <h2>Tittle</h2>
-        <h1>Product</h1>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat
-          molestiae nostrum tenetur mollitia, ratione saepe ipsum cupiditate!
-          Vel at eaque unde? Perspiciatis exercitationem reprehenderit tempore.
-          Molestiae rem architecto perferendis! Tempora.
-        </p>
-        <button>Product Details</button>
-      </SideLeftItem>
-      ;
-    </>
+    <SideLeftItem>
+      <ProductDesigner>Tittle</ProductDesigner>
+      <ProductName>Product</ProductName>
+      <Description>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat
+        molestiae nostrum tenetur mollitia, ratione saepe ipsum cupiditate! Vel
+        Molestiae rem architecto perferendis! Tempora.
+      </Description>
+      <ButtonDetail>Product Details</ButtonDetail>
+    </SideLeftItem>
   );
 };
 
