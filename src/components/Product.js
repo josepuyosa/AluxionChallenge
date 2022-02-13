@@ -1,20 +1,21 @@
 import React from "react";
-import BlackChair from "../recursos/Silla negra.png";
 import styled from "styled-components";
 
 const SideRightItem = styled.div`
+  display: block;
   width: 60%;
+  overflow: hidden;
+  margin-left: 70rem;
+  padding-right: 28rem;
   @media (min-width: 1024px) {
-    width: 70%;
+    width: 100%;
   }
 `;
-const Image = styled.img`
-  margin-left: 10rem;
-`;
-const Product = () => {
+const Image = styled.img``;
+const Product = ({ img }) => {
   return (
     <SideRightItem>
-      <Image src={BlackChair} alt="" />
+      <Image src={img} alt="" />
     </SideRightItem>
   );
 };
