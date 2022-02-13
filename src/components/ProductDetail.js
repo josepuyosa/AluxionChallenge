@@ -19,16 +19,7 @@ const ProductName = styled.h1`
   display: block;
   text-align: start;
 `;
-const ButtonDetail = styled.button`
-  padding: 1.2rem 1rem;
-  text-align: center;
-  background-color: #000;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  border: 1px sol;
-`;
+
 const ProductDetail = ({ tittle, designer }) => {
   return (
     <SideLeftItem>
@@ -38,7 +29,6 @@ const ProductDetail = ({ tittle, designer }) => {
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat
         molestiae nostrum tenetur mollitia, ratione saepe ipsum cupiditate!
       </Description>
-      <ButtonDetail>Product Details</ButtonDetail>
     </SideLeftItem>
   );
 };

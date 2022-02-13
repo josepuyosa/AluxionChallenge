@@ -14,6 +14,9 @@ const MenuIcon = styled.div`
   cursor: pointer;
 `;
 const NavBar = styled.nav`
+  position: -webkit-sticky; // required for Safari
+  position: sticky;
+  top: 0; // required as well.
   display: flex;
   align-items: center;
   height: 12rem;
