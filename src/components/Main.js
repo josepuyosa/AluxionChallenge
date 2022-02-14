@@ -5,6 +5,8 @@ import FooterMenu from "./FooterMenu";
 import DarkNav from "./DarkNav";
 import Sidebar from "./Sidebar";
 import styled from "styled-components";
+import { Transition, animated, useSpring } from "react-spring";
+
 const MenuContainer = styled.div`
   position: absolute;
   background-color: #000;
@@ -13,7 +15,6 @@ const MenuContainer = styled.div`
 `;
 const ButtonDetail = styled.button`
   position: fixed;
-
   bottom: 10rem;
   height: 5rem;
   margin: 0 16rem 32rem;
@@ -24,8 +25,9 @@ const ButtonDetail = styled.button`
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  border: 1px sol;
+  border: 1px solid;
 `;
+
 const Main = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
@@ -35,13 +37,44 @@ const Main = () => {
   const toggleCloseMenuIcon = () => {
     setMenuIsOpen(false);
   };
+
   return (
     <>
       {menuIsOpen ? (
         <>
+          <DarkNav closeMenu={toggleCloseMenuIcon} />
           <MenuContainer>
-            <DarkNav closeMenu={toggleCloseMenuIcon} />
-            <Sidebar />
+            <Transition
+              items={menuIsOpen}
+              from={{ opacity: 0 }}
+              enter={{ opacity: 1 }}
+              leave={{ opacity: 0 }}
+              reverse={menuIsOpen}
+              delay={600}
+              onRest={() =>
+                this.setState({
+                  menuIsOpen: !menuIsOpen,
+                })
+              }
+            >
+              {({ opacity }, styles, item) =>
+                item && (
+                  <animated.div
+                    style={
+                      (styles,
+                      {
+                        opacity: opacity.to({
+                          range: [0.0, 1.0],
+                          output: [0, 1],
+                        }),
+                      })
+                    }
+                  >
+                    {<Sidebar />}
+                  </animated.div>
+                )
+              }
+            </Transition>
           </MenuContainer>
         </>
       ) : (

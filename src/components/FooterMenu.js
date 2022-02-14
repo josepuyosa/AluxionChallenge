@@ -16,7 +16,6 @@ const ListItems = styled.ul`
 `;
 const ListItem = styled.li`
   margin-left: 12rem;
-  transition: all 3s;
 `;
 const NumItem = styled.p`
   margin: 0;
@@ -36,7 +35,11 @@ const FooterMenu = () => {
           <NumItem>01</NumItem>
           <Button
             onClick={() =>
-              scrollBy({ top: -1000, left: 0, behavior: "smooth" })
+              scrollBy({
+                top: -1000,
+                left: 0,
+                behavior: "smooth",
+              })
             }
           >
             Shell Dining Chair
@@ -45,7 +48,13 @@ const FooterMenu = () => {
         <ListItem>
           <NumItem>02</NumItem>
           <Button
-            onClick={() => scrollBy({ top: 1000, left: 0, behavior: "smooth" })}
+            onClick={() =>
+              scrollBy({
+                top: 1000,
+                left: 0,
+                behavior: "smooth",
+              })
+            }
           >
             Dunes Anthrazite Black
           </Button>
